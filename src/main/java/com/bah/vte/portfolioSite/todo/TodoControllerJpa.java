@@ -35,15 +35,15 @@ public class TodoControllerJpa {
 		return "listTodos";
 	}
 
-	@RequestMapping(value="/add-todo", method = RequestMethod.GET)
+	@RequestMapping(value="/create-new", method = RequestMethod.GET)
 	public String showNewTodoPage(ModelMap model) {
 		String username = getLoggedInUsername(model);
-		Todo todo = new Todo(0, username, "", LocalDate.now().plusYears(1), false);
+		Todo todo = new Todo(0, username, "","","", LocalDate.now().plusYears(1), false, "");
 		model.put("todo", todo);
 		return "todo";
 	}
 
-	@RequestMapping(value="/add-todo", method = RequestMethod.POST)
+	@RequestMapping(value="/create-new", method = RequestMethod.POST)
 	public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 		
 		if(result.hasErrors()) {
@@ -54,7 +54,7 @@ public class TodoControllerJpa {
         todo.setUsername(username);
         todoRepository.save(todo);
 
-		return "redirect:list-todos";
+		return "welcome";
 	}
 
 	@RequestMapping("/delete-todo")

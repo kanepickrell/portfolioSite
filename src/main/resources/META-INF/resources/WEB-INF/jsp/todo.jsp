@@ -2,38 +2,87 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
-    <head>
-        <h1> Add ToDo Page </h1>
-        <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel = "stylesheet" >
-        <link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" >
-    </head>
-    
-    <body>
-        <div class="container">
-            <h1> Enter ToDo details </h1>
-            <form:form method="post" modelAttribute="todo">
-                <fieldset class="mb-3">
-                    <form:label path="description">Description</form:label>
-                    <form:input type="text" path="description" required="required"/>
-                    <form:errors path="description" cssClass="text-warning"/>
-                </fieldset>
+<head>
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-                <fieldset class="mb-3">				
-                    <form:label path="targetDate">Target Date</form:label>
-                    <form:input type="text" path="targetDate" required="required"/>
-                    <form:errors path="targetDate" cssClass="text-warning"/>
-                </fieldset>
+<body>
+	<div class="container">
+
+		<h1>Enter ToDo details</h1>
+
+		<div class="dropdown mb-3">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Perspective
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Hiring Manager</a>
+				<a class="dropdown-item" href="#">Colleague</a>
+				<a class="dropdown-item" href="#">External</a>
+			</div>
+		</div>
+
+        <div class="dropdown mb-3">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Feedback Type
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Skill Improvement</a>
+                <a class="dropdown-item" href="#">Suggestion</a>
+				<a class="dropdown-item" href="#">Express Interest</a>
+				<a class="dropdown-item" href="#">Presentation Request</a>
+			</div>
+		</div>
+            
+		<form:form method="post" modelAttribute="todo">
+
+            <div class="mb-3">
+                <!-- <label path="inquiryname" for="exampleInputEmail1">Name</label>
+                <input path="inquiryname" type="text" class="form-control-sm" placeholder="Enter name"> -->
+
+                <form:label path="inquiryname">Name</form:label>
+                <form:input type="text" path="inquiryname" class="form-control-sm" placeholder="Enter name"/>
+
+            </div>
+
+            <div class="mb-3">
                 
-                <form:input type="hidden" path="id"/>
-                <form:input type="hidden" path="done"/>
-                <input type="submit" class="btn btn-success" />
-            </form:form>
-        </div>
-            <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-            <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-            <script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-            <script type="text/javascript">$('#targetDate').datepicker({format: 'yyyy-mm-dd'});
-</script>
+                <form:label path="email">Email address</form:label>
+                <form:input type="email" path="email" class="form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                
+                <small id="emailHelp" class="form-text text-muted">Optional</small>
+            </div>
+
+
+			<fieldset class="mb-3">
+				<form:label path="description" style="display: block; margin-bottom: 0;">Feedback</form:label>
+                <form:textarea path="description" required="required" rows="5" cols="50" style="resize: none;"></form:textarea>
+                <form:errors path="description" cssClass="text-warning"/>
+			</fieldset>
+
+			<fieldset class="mb-3">
+				<form:label path="targetDate">Target Date</form:label>
+					<form:input type="text" path="targetDate" required="required"/>
+				<form:errors path="targetDate" cssClass="text-warning"/>
+			</fieldset>
+
+			<form:input type="hidden" path="id"/>
+			<form:input type="hidden" path="done"/>
+			<input type="submit" class="btn btn-success">
+		</form:form>
+
+	</div>
+
+	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
+	<script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript">$('#targetDate').datepicker({format: 'yyyy-mm-dd'});</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
     </body>
 </html>

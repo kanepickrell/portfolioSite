@@ -34,7 +34,7 @@ public class TodoService {
 	// }
 
 	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
-		Todo todo = new Todo(++todosCount,username,description,targetDate,done);
+		Todo todo = new Todo(++todosCount,username,description,description, description, targetDate,done, description);
 		todos.add(todo);
 	}
 

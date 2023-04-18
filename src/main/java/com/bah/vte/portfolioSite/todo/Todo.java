@@ -17,24 +17,39 @@ public class Todo {
 		super();
 	}
 
-	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
+	public Todo(int id, String username, String inquiryname,String email,String description, LocalDate targetDate, boolean done, String topic) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
 		this.done = done;
+		this.topic = topic;
+		this.inquiryname = inquiryname;
 	}
 
 	@Id
 	@GeneratedValue
 	private int id;
 	private String username;
+
+	private String inquiryname;
+
+	private String email;
 	
 	@Size(min=10, message="Enter atleast 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
+	private String topic;
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
 
 	public int getId() {
 		return id;
@@ -50,6 +65,22 @@ public class Todo {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getInquiryname() {
+		return inquiryname;
+	}
+
+	public void setInquiryname(String inquiryname) {
+		this.inquiryname = inquiryname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getDescription() {
@@ -78,8 +109,11 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", username=" + username + ", description=" + description + ", targetDate="
-				+ targetDate + ", done=" + done + "]";
+		return "Todo [id=" + id + ", username=" + username + ", inquiryname=" + inquiryname + ", email=" + email
+				+ ", description=" + description + ", targetDate=" + targetDate + ", done=" + done + ", topic=" + topic
+				+ "]";
 	}
+
+	
 
 }
