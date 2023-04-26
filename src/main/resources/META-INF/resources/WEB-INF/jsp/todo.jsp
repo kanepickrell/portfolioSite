@@ -9,9 +9,49 @@
 </head>
 
 <body>
-	<div class="container">
 
-		<h1>Enter ToDo details</h1>
+	<header data-bs-theme="dark">
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #1A5692;">
+		  <div class="container-fluid">
+			<a href="/" class="navbar-brand" href="#">Home</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+  
+				<li class="nav-item">
+				  <a href="/resume" class="nav-link active" aria-current="page" href="#">Resume</a>
+				</li>
+  
+				<li class="nav-item">
+				  <a href="/project" class="nav-link active" aria-current="page" href="#">Projects</a>
+				</li>
+  
+				<li class="nav-item">
+				  <a href="/goal" class="nav-link active" aria-current="page" href="#">Goals</a>
+				</li>
+  
+				<li class="nav-item">
+				  <a href="/create-new" class="nav-link active" aria-current="page" href="#">Feedback</a>
+				</li>
+  
+				<li class="nav-item">
+				  <a href="/list-todos" class="nav-link active" aria-current="page" href="#">Report</a>
+				</li>
+  
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	  </header>
+
+	<style>
+		::backdrop {
+			background-color: #1A5692;
+		}
+	</style>
+	<div class="container">
 
 		<div class="dropdown mb-3">
 			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

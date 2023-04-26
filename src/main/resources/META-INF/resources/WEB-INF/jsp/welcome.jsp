@@ -10,21 +10,43 @@
     <link rel="stylesheet" type="text/css" href="${pageConext.request.contextPath}/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
     <section>
-        <header>
-            <ul>
-                <li><a href="/resume" class="btn btn-success">Resume</a></li>
-                <li><a href="/project" class="btn btn-success">Projects</a></li>
-                <li><a href="/goal" class="btn btn-success">Goals</a></li>
-                <li><a href="/create-new" class="btn btn-success">Feedback</a></li>
-                <li><a href="/list-todos" class="btn btn-success">Report</a></li>
-            </ul>
-        </header>
+        <header data-bs-theme="dark">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #1A5692;">
+              <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      
+                    <li class="nav-item">
+                      <a href="/resume" class="nav-link active" aria-current="page" href="#">Resume</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a href="/project" class="nav-link active" aria-current="page" href="#">Projects</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a href="/goal" class="nav-link active" aria-current="page" href="#">Goals</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a href="/create-new" class="nav-link active" aria-current="page" href="#">Feedback</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a href="/list-todos" class="nav-link active" aria-current="page" href="#">Report</a>
+                    </li>
+      
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
         <div class="content">
             <div class="textbox">
                 <h3><span id="skill"></span></h3><br><h2><span id="hire">For Hire</span></h2>
